@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -29,7 +28,7 @@ export default function HomePage() {
               <div key={Math.random()}>
                 <Link
                   className="link"
-                  to={`/categories/${category.strCategory}`}
+                  to={`/categorypage/${category.strCategory}`}
                   target="_blank"
                 >
                   <p>{category.strCategory}</p>

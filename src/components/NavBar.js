@@ -10,7 +10,7 @@ export default function NavBar() {
       {" - "}
       <NavLink
         activeStyle={{ fontSize: 20, fontWeight: "bold" }}
-        to="/categoryPage"
+        to="/categoryPage/:strcategory"
       >
         categoryPage
       </NavLink>
