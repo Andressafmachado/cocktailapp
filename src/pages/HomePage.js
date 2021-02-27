@@ -1,32 +1,41 @@
 import axios from "axios";
-import react from "react";
+
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
-  const [cocktail, setCocktail] = useState([]);
+  const [category, setCategory] = useState();
 
   useEffect(() => {
     async function fetchData() {
       const response = await axios.get(
         `https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`
       );
-      setCocktail(response.data.drinks);
-
-      console.log(cocktail);
+      setCategory(response.data.drinks);
     }
     fetchData();
   }, []);
 
-  console.log(cocktail);
+  console.log(category);
 
   return (
     <div>
       <ul>
-        {!cocktail ? (
+        {!category ? (
           <h1>Loading...</h1>
         ) : (
-          cocktail.map((category) => {
-            return <li>{category.strCategory}</li>;
+          category.map((category) => {
+            return (
+              <div key={Math.random()}>
+                <Link
+                  className="link"
+                  to={`/categories/${category.strCategory}`}
+                  target="_blank"
+                >
+                  <p>{category.strCategory}</p>
+                </Link>
+              </div>
+            );
           })
         )}
       </ul>

@@ -2,8 +2,8 @@ import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
-import Categorie from "./pages/Categorie";
 import CocktailPage from "./pages/CocktailPage";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" component={HomePage} exact />
-        <Route path="/categorie" component={Categorie} />
+        <Route path="/categoryPage" component={CategoryPage} />
         <Route path="/cocktaildetail" component={CocktailPage} />
       </Switch>
     </div>
