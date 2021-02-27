@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -17,9 +17,9 @@ export default function NavBar() {
       {" - "}
       <NavLink
         activeStyle={{ fontSize: 20, fontWeight: "bold" }}
-        to="/cocktaildetail"
+        to="/cocktailpage/:idDrink"
       >
-        cocktaildetail
+        cocktailpage
       </NavLink>
     </div>
   );

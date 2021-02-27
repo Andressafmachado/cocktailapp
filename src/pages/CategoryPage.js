@@ -18,7 +18,7 @@ export default function CategoryPage() {
       setCategories(response.data.drinks);
     }
     fetchData();
-  }, []);
+  }, [strcategory]);
 
   console.log(categories);
 
@@ -33,8 +33,8 @@ export default function CategoryPage() {
               <div className="cocktail-card">
                 <Link
                   className="link"
-                  to={`/cocktail/${c.idDrink}`}
-                  // target="_blank"
+                  to={`/cocktailpage/${c.idDrink}`}
+                  target="_blank"
                 >
                   <h3>{c.strDrink}</h3>
                   <img src={c.strDrinkThumb} alt="cocktail" height="200px" />

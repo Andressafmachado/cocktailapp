@@ -12,7 +12,7 @@ function App() {
       <Switch>
         <Route path="/" component={HomePage} exact />
         <Route path="/categorypage/:strcategory" component={CategoryPage} />
-        <Route path="/cocktaildetail" component={CocktailPage} />
+        <Route path="/cocktailpage/:idDrink" component={CocktailPage} />
       </Switch>
     </div>
   );
