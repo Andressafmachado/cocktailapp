@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function CocktailPage() {
   // const route_parameters = useParams();
   // console.log(route_parameters);
-
-  // return <div>this is your CategoryPage</div>;
 
   const { idDrink } = useParams();
   console.log(idDrink);
@@ -28,12 +26,6 @@ export default function CocktailPage() {
 
   console.log(cocktail);
 
-  // return (
-  //   <p>
-  //     {JSON.stringify(cocktail)}
-  //     ANDRESSA
-  //   </p>
-  // );
   return (
     <div>
       {!cocktail ? (
@@ -47,28 +39,74 @@ export default function CocktailPage() {
                 <img src={c.strDrinkThumb} alt="cocktail" height="200px" />
               </div>
               <p>
-                Alcoholic: {c.strAlcoholic === "Alcoholic" ? "Yes!" : "No!"}
+                Alcoholic? {c.strAlcoholic === "Alcoholic" ? "Yes!" : "No!"}
               </p>
               <p>Category: {c.strCategory}</p>
               <p>Glass: {c.strGlass}</p>
               <p>
                 <strong>Ingredients:</strong>{" "}
               </p>
-              <p>{c.strIngredient1}</p>
-              <p>{c.strIngredient2}</p>
-              <p>{c.strIngredient3}</p>
-              <p>{c.strIngredient4}</p>
-              <p>{c.strIngredient5}</p>
-              <p>{c.strIngredient6}</p>
-              <p>{c.strIngredient7}</p>
-              <p>{c.strIngredient8}</p>
-              <p>{c.strIngredient9}</p>
-              <p>{c.strIngredient10}</p>
-              <p>{c.strIngredient11}</p>
-              <p>{c.strIngredient12}</p>
-              <p>{c.strIngredient13}</p>
-              <p>{c.strIngredient14}</p>
-              <p>{c.strIngredient15}</p>
+              <p>
+                {c.strMeasure1} {c.strIngredient1}
+              </p>
+              <p>
+                {c.strMeasure2} {c.strIngredient2}
+              </p>
+              <p>
+                {c.strMeasure3}
+                {c.strIngredient3}
+              </p>
+              <p>
+                {c.strMeasure4} {c.strIngredient4}
+              </p>
+              <p>
+                {c.strMeasure5}
+                {c.strIngredient5}
+              </p>
+              <p>
+                {c.strMeasure6}
+                {c.strIngredient6}
+              </p>
+              <p>
+                {c.strMeasure7}
+                {c.strIngredient7}
+              </p>
+              <p>
+                {c.strMeasure8}
+                {c.strIngredient8}
+              </p>
+              <p>
+                {c.strMeasure9}
+                {c.strIngredient9}
+              </p>
+              <p>
+                {c.strMeasure10}
+                {c.strIngredient10}
+              </p>
+              <p>
+                {c.strMeasure11}
+                {c.strIngredient11}
+              </p>
+              <p>
+                {c.strMeasure12}
+                {c.strIngredient12}
+              </p>
+              <p>
+                {c.strMeasure13}
+                {c.strIngredient13}
+              </p>
+              <p>
+                {c.strMeasure14}
+                {c.strIngredient14}
+              </p>
+              <p>
+                {c.strMeasure15}
+                {c.strIngredient15}
+              </p>
+              <p>
+                <strong>Instructions:</strong>
+              </p>
+              <p> {c.strInstructions}</p>
             </div>
           );
         })

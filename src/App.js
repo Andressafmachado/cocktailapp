@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" component={HomePage} exact />
-        <Route path="/categorypage/:strcategory" component={CategoryPage} />
+        <Route path="/categorypage/:strCategory" component={CategoryPage} />
         <Route path="/cocktailpage/:idDrink" component={CocktailPage} />
       </Switch>
     </div>

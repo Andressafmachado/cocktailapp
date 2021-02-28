@@ -19,18 +19,28 @@ export default function HomePage() {
 
   return (
     <div>
+      <h1>
+        {" "}
+        <strong>Cheers!</strong>
+      </h1>
+      <p>
+        Here you can find 617 different drinks and cocktails from around the
+        world.{" "}
+      </p>
+      <p>First choose the category: </p>
+
       <ul>
         {!category ? (
           <h1>Loading...</h1>
         ) : (
           category.map((category) => {
+            const category2 = category.strCategory;
+            const categoryNoSpace = category2.replace(/ /g, "_");
+            const encodedCategory = encodeURIComponent(categoryNoSpace);
+
             return (
               <div key={Math.random()}>
-                <Link
-                  className="link"
-                  to={`/categorypage/${category.strCategory}`}
-                  target="_blank"
-                >
+                <Link className="link" to={`/categorypage/${encodedCategory}`}>
                   <p>{category.strCategory}</p>
                 </Link>
               </div>
