@@ -1,1 +1,1 @@
-this app is online: https://andressascocktailapp.netlify.app/
+ online version: https://andressascocktailapp.netlify.app/
