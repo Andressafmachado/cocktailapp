@@ -1,24 +1,24 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CocktailItem from "../components/CocktailItem";
+import "./HomePage.css";
 
 export default function HomePage() {
-  const [category, setCategory] = useState();
+  const [cocktail, setCocktail] = useState();
 
   useEffect(() => {
     async function fetchData() {
       const response = await axios.get(
-        `https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`
+        `https://www.thecocktaildb.com/api/json/v1/1/random.php`
       );
-      setCategory(response.data.drinks);
+      setCocktail(response.data.drinks[0]);
     }
     fetchData();
   }, []);
 
-  console.log(category);
-
   return (
-    <div>
+    <div className="HomePage">
       <h1>
         {" "}
         <strong>Cheers!</strong>
@@ -27,27 +27,15 @@ export default function HomePage() {
         Here you can find 617 different drinks and cocktails from around the
         world.{" "}
       </p>
-      <p>First choose the category: </p>
 
-      <ul>
-        {!category ? (
-          <h1>Loading...</h1>
-        ) : (
-          category.map((category) => {
-            const category2 = category.strCategory;
-            const categoryNoSpace = category2.replace(/ /g, "_");
-            const encodedCategory = encodeURIComponent(categoryNoSpace);
-
-            return (
-              <div key={Math.random()}>
-                <Link className="link" to={`/categorypage/${encodedCategory}`}>
-                  <p>{category.strCategory}</p>
-                </Link>
-              </div>
-            );
-          })
-        )}
-      </ul>
+      <Link to="./categories">
+        <button id="button">all categories</button>
+      </Link>
+      {!cocktail ? null : (
+        <div className="cocktailcomponent">
+          <CocktailItem props={cocktail} />
+        </div>
+      )}
     </div>
   );
 }

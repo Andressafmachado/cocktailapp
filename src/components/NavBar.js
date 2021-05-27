@@ -4,8 +4,11 @@ import { NavLink } from "react-router-dom";
 export default function NavBar() {
   return (
     <div className="navbar">
-      <NavLink activeStyle={{ fontSize: 20, fontWeight: "bold" }} to="/" exact>
+      <NavLink to="/" exact>
         Home
+      </NavLink>{" "}
+      <NavLink to="/categories" exact>
+        Categories
       </NavLink>
     </div>
   );

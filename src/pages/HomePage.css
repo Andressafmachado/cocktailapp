@@ -1,0 +1,12 @@
+.HomePage {
+  display: flex;
+  flex-direction: column;
+}
+
+#button {
+  background-color: rgb(218, 187, 218);
+  padding: 1%;
+  border: solid white;
+  border-radius: 5px;
+  font-size: 110%;
+}

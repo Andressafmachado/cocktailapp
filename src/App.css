@@ -4,7 +4,13 @@
 }
 
 .navbar {
-  padding: 15px 440px 15px;
-  background-color: #95e2e8;
-  color: black;
+  display: flex;
+  padding: 2%;
+  background-color: rgb(218, 187, 218);
+  font-size: 120%;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
 }
